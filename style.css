@@ -1,0 +1,246 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: darkmagenta;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.container{
+    width: 100%;
+    max-width: 1200px;
+}
+.header-container{
+    border-radius: 10px;
+    display: flex;
+    padding: 0 30px;
+    justify-content: space-between;
+    margin-top: 20px;
+    height: 80px;
+    align-items: center;
+    box-shadow: -1px 11px 25px 16px rgba(172, 9, 201, 0.19);
+}
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-weight: 700;
+    font-size: 24px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.logo a{
+    box-shadow: 1px 0px 54px 25px rgba(0, 0, 0, 0.2);
+    font-weight: 900;
+    border-radius: 3px;
+    padding: 5px 10px;
+    color: darkslateblue;
+    background-color: white;
+}
+
+
+ul{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+ul > li a{
+    padding: 5px 10px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+    font-family: sans-serif;
+}
+
+
+.btn{
+    padding: 10px 20px;
+    border: 3px solid transparent;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: white;
+    }
+    .btn a{
+        font-weight: 700;
+        color: darkmagenta;
+    
+    }
+.form{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    gap: 20px;
+    margin-top: 80px;
+}
+
+.section{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    padding: 30px;
+}
+.box{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border: 2px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 700;
+    color: darkmagenta;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+background-color: white;
+border-top-left-radius: 15px;
+border-bottom-right-radius: 15px;
+}
+
+
+.block{
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.boxs{
+    padding: 10px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 200px;
+    border-radius: 10px;
+    align-items: center;
+}
+
+
+
+/* Attribute Selectors mana hozirda misol qilsek atributlari orqali 
+css stillarini bersek boladi bunda {type text} bo`lgan barcha barcha elementlarga
+style beramiz */
+input[type="text"]{
+    border: none;
+    outline: none;
+    padding: 5px 10px;border-radius: 5px;
+    background-color: rgba(255, 255, 0, 0.47);
+}
+
+a{
+    text-decoration: none;
+}
+/* Pseudo-Classes bunda bu holatni css ni bilgan barcha dasturchi ishlatgan
+menga o`xshab nomini bilmagan bo`lishi mumkin 
+bu holatda sichqoncha bosilganda yoki element ustiga borganda va boshqacha stillarni
+o`zgarish xosasi misol qilib headerdagi buttonni ko`rsataman */
+
+.btn:hover{
+    background-color: darkmagenta;
+    border-color: white;
+}
+.btn:hover a{
+    color: white;
+}
+ul li a:hover{
+  border-color: white;
+}
+.btn:active{
+    background-color: rgb(9, 234, 9);
+}
+.btn a:focus{
+    background-color: red;
+}
+ul li:nth-child(1) a{
+    border-color: white ;
+}
+
+
+/* Psevdoelementlar o`ziga qo`shimcha element kritadi misol keltiramiz 
+after va before */
+
+/* befor qismida elementni oldiga qo`shimcha element beradi */
+.box::before{
+    position: absolute;
+    content: "delete";
+    padding: 2px 10px;
+    background-color: red;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    transform: rotate(0deg);
+    top: 0px;
+    right: 0px;
+    font-size: 12px;
+    color: white;
+}
+
+/* after da esa beforeni aksi elementning orqasiga element content qoshib beradi aytgancha 
+after yo before ishlatganda hechyogi content=""; bosh bo`lsada qo`yish shart bo`lmasa
+malumot yo odiy divdek quti yaratmeydi ishlameydi 
+harakatiz 0 ga teng bo`ladi */
+.box::after{
+    color: white;
+   position: absolute;
+   bottom: 0;
+   font-weight: 500;
+   font-size: 14px;
+   content: "down";
+   padding: 5px 10px;
+   background-color: blue;
+   border-top-left-radius: 20px;
+   border-bottom-right-radius: 20px;
+   left: 0;
+}
+/* Kombinatorlar ular ichidagi orasidagi bog`lanishga qaab stillar beramiz 
+ */
+ /* men misol keltirish uchun block degan div ochganman shular orasidagi elementlar 
+ bilan ko`rsatib beraman */
+
+/* descendant */
+ .block p{
+    color: red;
+ }
+ /* kombinatorlarning biri Descendant Selector bo`lib bu o`zi ichidagi 
+ barcha {p} bola elementlariga stil beradi u ichidagi biror
+elemetning bolasi bo`lsada */
+
+
+/* child selector */
+.block > h1{
+    color: blueviolet;
+}
+
+.boxs > p{
+ width: 100%;
+ text-align: center;   
+}
+/* Child Selector descendant selectoridan farqi bor bunda o`zing bola h1 elemetlariga 
+stillar beradi uning ichidagi biror bola elementing ichida h1 elementi bo`lsa yani buning nevara 
+elementi unga tasir etmeydi descendant dan farqi shunda {>} */
+
+/* Pseudo-Classes buning :not(selector) esa ko`rsatilgan clas tanlovga mos kelmagan barcha elementlarni 
+stilini o`zgartirishga ishlatiladi JavaScriptdagi foreach metodiga o`xshatdim 
+biror shartga mosh kelmagan masiv malumotlaridan boshqalarini qaytarishga
+misol uchun*/
+.boxs p:not(.p){
+    background-color: darkslateblue;
+    color: white;
+}
+/* index.html ga qarasez boxs div ichidagi p lar bir bolasiga .p clasini 
+berganman aynan oshandan boshqa barcha elementlariga bacground bergan */
+
+/* Pseudo-Classes buning :empty esa ichida bo`sh bo`lgan elementlarnga stil beradi
+misol tariqasida headerda keltirdim buni headerda ishlatilmasa kerak o`zi 
+men shunchaki tushintirish maqsadida headerdagi ul bolimlarga qo`ydim  */
+ul li a:empty{
+    display: none;
+}
+/* menimcha biror formga submit yoki button click bo`lganda biror inputlarda
+malumot bo`lmasa shu elemetni o`chirish yoki boshqa maqsadlardaham ishlatiladi */
